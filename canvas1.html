@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<HTML>
+ <BODY>
+<CANVAS ID="myCanvas" width="300" height="300" style="border:1px solid
+black">
+</CANVAS>
+
+<P>Image to use:</P>
+<IMG src="callus.png" ID="pattern">
+<P>Canvas:</P>
+<BUTTON onclick="draw('repeat')"></BUTTON>
+<CANVAS ID="myCanvas" width="300" height="150" style="border:1px solid ;w>
+</CANVAS>
+<SCRIPT>
+function draw(direction)
+{
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var img=document.getElementById("pattern") 
+var pat=ctx.createPattern(img,direction);
+ctx.rect(0,0,300,150);
+ctx.fillStyle=pat;
+ctx.fill();
+}
+// ctx.shadowBlur=40;
+// ctx.fillStyle="purple";
+// ctx.shadowColor="black";
+// ctx.fillRect(20,20,100,80);
+// var grad=ctx.createLinearGradient(0,0,170,0);
+// var grad=ctx.createRadialGradient(75,50,5,90,60,100);
+// grad.addColorStop(0,"blue");
+// grad.addColorStop("0.5","yellow");
+// grad.addColorStop(1,"red"); 
+// ctx.fillStyle=grad; 
+// ctx.fillRect(20,20,180,180); 
+
+// ctx.clearRect(30,40,20,50); 
+// ctx.shadowColor="blue";
+// ctx.fillRect(140,20,100,80);
+</SCRIPT>
+</BODY>
+</HTML>

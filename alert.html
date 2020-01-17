@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <LINK type="text/css" rel="stylesheet" href="ExternalStylesheet\homestylesheet.css" />
+    <title>Document</title>
+
+    <script>
+        function f1() {
+            var v = document.getElementById("0").value;
+            var v1 = document.getElementById("1").value;
+            alert("user name is "+v + " passord is "+v1);
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <DIV id="mainDivContainer" style="position: relative; width: 100%; margin-top: 0px; margin-bottom: 0px;">
+
+        <DIV style="width: 1050px;  margin-top: 5px; margin-left: auto; margin-right: auto">
+
+            <DIV style="width: 1050px; height:80px;">
+
+                <IMG id="logo" src="images\Logo.png" width="500" height="100">
+
+
+                <H5>For Enquiry<BR>
+
+                    Call Us 9225648543
+
+                </H5>
+                <IMG id="callus" src="images\callus.png"> <br><br>
+
+            </DIV>
+            <div style="background-color: white">
+
+                <fieldset>
+                    
+                    <legend>
+                        <h4>SIGN IN</h4>
+                    </legend>
+                    <form>
+                        <br>
+                        UserName :
+                        <input id="0"type="text">
+                        <br><br>
+                        Password :
+                        <input id="1" type="password">
+                        <br><br>
+                        <button type="submit" onclick="f1()">Login</button>
+
+                    </form>
+                </fieldset>
+
+
+
+
+</body>
+
+</html>
