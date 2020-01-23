@@ -72,6 +72,8 @@
 ## Day 18
 		Typescript
 		Angular started
+## Day 19
+		Angular-Tour of Heroes
 		
 		EcmaScript Clsses 
 		Dom Manipulations 
