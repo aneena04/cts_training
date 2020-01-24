@@ -1,0 +1,5 @@
+<h1>{{title}}</h1>
+<app-heroes></app-heroes>
+<!-- <app-app-child [messageFromParent]="message"></app-app-child> -->
+<app-app-child (childMessage)="SetMessage($event)"></app-app-child>
+    {{messageFromChild}}
