@@ -91,4 +91,18 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
+	@Override
+	public boolean isValidUser(String username, String password) {
+		try {
+			Session session = sessionFactory.openSession();
+			Transaction tx = session.beginTransaction();
+Qu
+tx.commit();
+			session.close();
+			return true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			return false;
+		}	}
+
 }

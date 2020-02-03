@@ -2,26 +2,26 @@ package com.cts.training.model;
 
 import java.io.Serializable;
 
-public class Company implements Serializable {
+public class Company implements Serializable{
 
-	private static final long serialVersionUID = -2586010873652163243L;
+	private static final long serialVersionUID = -6721988738619310856L;
+	
 	private int id;
 	private String name;
 	private String sector;
 	private String ceoName;
-	private double turnover;
-
+	private double turnOver;
+	
 	public Company() {
-
 	}
 
-	public Company(int id, String name, String sector, String ceoName, double turnover) {
+	public Company(int id, String name, String sector, String ceoName, double turnOver) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.sector = sector;
 		this.ceoName = ceoName;
-		this.turnover = turnover;
+		this.turnOver = turnOver;
 	}
 
 	public int getId() {
@@ -56,18 +56,20 @@ public class Company implements Serializable {
 		this.ceoName = ceoName;
 	}
 
-	public double getTurnover() {
-		return turnover;
+	public double getTurnOver() {
+		return turnOver;
 	}
 
-	public void setTurnover(double turnover) {
-		this.turnover = turnover;
+	public void setTurnOver(double turnOver) {
+		this.turnOver = turnOver;
 	}
 
 	@Override
 	public String toString() {
-		return "Company [id=" + id + ", name=" + name + ", sector=" + sector + ", ceoName=" + ceoName + ", turnover="
-				+ turnover + "]";
+		return "Company [id=" + id + ", name=" + name + ", sector=" + sector + ", ceoName=" + ceoName + ", turnOver="
+				+ turnOver + "]";
 	}
+	
+	
 
 }

@@ -2,6 +2,8 @@ package com.cts.training.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
+
 import com.cts.training.model.User;
 
 public interface UserDAO {
@@ -15,4 +17,8 @@ public interface UserDAO {
 	public User getUserById(int id);
 
 	public List<User> getAllUsers();
+	
+	public boolean isValidUser(String username,String password);
+		
+	
 }
