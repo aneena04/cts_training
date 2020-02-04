@@ -1,0 +1,14 @@
+<web-app>
+<servlet>
+
+<servlet-name>Hello Servlet</servlet-name>
+<servlet-class>com.cts.training.controller.HelloServlet</servlet-class>
+</servlet>
+
+
+<servlet-mapping>
+<servlet-name>Hello Servlet</servlet-name>
+<url-pattern>/hello</url-pattern>
+</servlet-mapping>
+
+</web-app>
