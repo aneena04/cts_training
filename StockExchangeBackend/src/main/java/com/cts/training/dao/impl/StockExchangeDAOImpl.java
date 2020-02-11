@@ -8,23 +8,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cts.training.dao.CompanyDAO;
 import com.cts.training.dao.StockExchangeDAO;
+import com.cts.training.model.Company;
 import com.cts.training.model.StockExchange;
-import com.cts.training.model.User;
-
 @Transactional
-@Repository(value = "companyDAO")
+	@Repository(value="stockDAO")
 public class StockExchangeDAOImpl implements StockExchangeDAO{
 	
-
+	
 		@Autowired
 		SessionFactory sessionFactory;
 
 	@Override
-	public boolean saveExchange(StockExchange stock) {
+	public boolean saveExchange(StockExchange exchange) {
 		try {
-			sessionFactory.getCurrentSession().save(stock);
+			sessionFactory.getCurrentSession().save(exchange);
+			return true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+	@Override
+	public boolean updateExchange(StockExchange exchange) {
+		try {
+			sessionFactory.getCurrentSession().update(exchange);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -33,20 +42,9 @@ public class StockExchangeDAOImpl implements StockExchangeDAO{
 	}
 
 	@Override
-	public boolean updateExchange(StockExchange stock) {
+	public boolean daleteExchange(StockExchange exchange) {
 		try {
-			sessionFactory.getCurrentSession().update(stock);
-			return true;
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	@Override
-	public boolean daleteExchange(StockExchange stock) {
-		try {
-			sessionFactory.getCurrentSession().delete(stock);
+			sessionFactory.getCurrentSession().delete(exchange);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -61,7 +59,8 @@ public class StockExchangeDAOImpl implements StockExchangeDAO{
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return null;
-		}	}
+		}
+	}
 
 	@Override
 	public List<StockExchange> getAllExchanges() {
@@ -71,6 +70,8 @@ public class StockExchangeDAOImpl implements StockExchangeDAO{
 			e.printStackTrace();
 			return null;
 		}
+		
 	}
+
 
 }

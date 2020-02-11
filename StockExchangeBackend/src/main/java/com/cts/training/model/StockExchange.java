@@ -6,7 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-@Entity
+
+import org.springframework.stereotype.Component;
+@Entity(name = "stock")
+@Component
 @Table(name = "StockMarket")
 public class StockExchange implements Serializable {
 
@@ -20,7 +23,6 @@ public class StockExchange implements Serializable {
 	private String remarks;
 	
 	public StockExchange() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public StockExchange(int id, String name, String address, String remarks) {

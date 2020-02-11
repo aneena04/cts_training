@@ -8,44 +8,43 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.cts.training.dao.UserDAO;
-import com.cts.training.dao.impl.UserDAOImpl;
-import com.cts.training.model.User;
 
-public class UserUnitTest {
+import com.cts.training.dao.StockExchangeDAO;
+import com.cts.training.model.StockExchange;
+
+public class StockExchangeUnitTest {
 
 	private static AnnotationConfigApplicationContext context;
 	@Autowired
-	private static UserDAO userDAO;
-	private static User user;
+	private static StockExchangeDAO stockDAO;
+	private static StockExchange stock;
 
 	@BeforeClass
 	public static void init() {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.cts.training");
 		context.refresh();
-		user = (User) context.getBean("user");
-		userDAO = (UserDAO) context.getBean("userDAO");
+		stock = (StockExchange) context.getBean("stock");
+		stockDAO = (StockExchangeDAO) context.getBean("stockDAO");
 
 	}
 
 	
 //	@Test
-//	public void test_update_user_success() {
-//		User u=userDAO.getUserById(101);
-//		u.setEnabled(false);
-//		assertEquals(true, userDAO.updateUser(u));
+//	public void test_update_exchange_success() {
+//		StockExchange se=stockDAO.getExchangeById(101);
+//		assertEquals(true, stockDAO.updateExchange(se));
 //	}
-//	@Test
-//	public void test_add_user() {
-//		User us= new User(100,  "Jerin","unni12", "unni@gmail.com", 44455476,false);
-//		assertEquals(true, userDAO.saveUser(us));
-//	}
+	@Test
+	public void test_add_exchange() {
+		StockExchange se= new StockExchange(100,  "chennai","dddd", "mutual fund");
+		assertEquals(true, stockDAO.saveExchange(se));
+	}
 	
 	@Test
-	public void testGetAllUsers() {
-		List<User> users = userDAO.getAllUsers();
-		assertEquals(3, users.size());
+	public void testGetAllExchanges() {
+		List<StockExchange> exchanges = stockDAO.getAllExchanges();
+		assertEquals(1, exchanges.size());
 	}
 //	@Test
 //	public void testDeleteUser() {

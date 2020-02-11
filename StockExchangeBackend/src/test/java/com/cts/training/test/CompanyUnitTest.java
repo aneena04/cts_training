@@ -35,38 +35,39 @@ public class CompanyUnitTest {
 	}
 
 	@Test
-	public void test_update_user_success() {
+	public void test_update_company_success() {
 		Company c = companyDAO.getCompanyById(101);
+		c.setCeoName("Abdus Saboor");
 		assertEquals(true, companyDAO.updateCompany(c));
 	}
 
-	@Test
-	public void test_add_company() {
-		Company c = new Company (35, "HDFC", "banking", "hameemsha", 674757734687.0);
-		assertEquals(true, companyDAO.saveCompany(c));
-	}
+	/*
+	 * @Test public void test_add_company() { Company c = new Company(35, "HDFC",
+	 * "banking", "hameemsha", 674757734687.0); assertEquals(true,
+	 * companyDAO.saveCompany(c)); }
+	 */
 
 	@Test
 	public void testGetAllCompanies() {
-		List<Company> company =companyDAO.getAllCompanies();
-		assertEquals(9, company.size());
+		List<Company> company = companyDAO.getAllCompanies();
+		assertEquals(2, company.size());
 	}
 
 //	@Test
-//	public void testDeleteUser() {
-//		Company c1= companyDAO.getCompanyById(101);
+//	public void testDeleteCompany() {
+//		Company c1= companyDAO.getCompanyById(111);
 //		assertEquals(true, companyDAO.daleteCompany(c1));
 //	}
 //
 //	@Test(expected = NullPointerException.class)
 //	public void testDeleteUserFail() {
-//		Company c = companyDAO.getCompanyById(51);
+//		Company c = companyDAO.getCompanyById(66);
 //		assertEquals(true, companyDAO.daleteCompany(c));
 //	}
 //
-//	@Test
-//	public void testGetCompanyById() {
-//		Company c = companyDAO.getCompanyById(52);
-//		assertEquals("Aneena", c.getCeoName());
-//	}
+	@Test
+	public void testGetCompanyById() {
+		Company c = companyDAO.getCompanyById(35);
+		assertEquals("hameemsha", c.getCeoName());
+	}
 }

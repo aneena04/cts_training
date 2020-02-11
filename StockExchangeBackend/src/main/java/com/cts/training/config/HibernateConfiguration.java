@@ -15,8 +15,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.cts.training.model.Company;
+import com.cts.training.model.StockExchange;
 import com.cts.training.model.User;
-
 
 @Configuration
 @EnableTransactionManagement
@@ -26,13 +26,16 @@ public class HibernateConfiguration {
 	public LocalSessionFactoryBean getSessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(getDataSource());
-//		sessionFactory.setPackagesToScan(new String[] { "com.cts.training.model" });
+		sessionFactory.setPackagesToScan(new String[] { "com.cts.training.model" });
 //		sessionFactory.setAnnotatedClasses(User.class);
-		sessionFactory.setAnnotatedClasses(Company.class);
+//		sessionFactory.setAnnotatedClasses(Company.class);
+//		sessionFactory.setAnnotatedClasses(StockExchange.class);
+
 
 		sessionFactory.setHibernateProperties(getHibernateProperties());
 		return sessionFactory;
 	}
+
 	private DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -41,6 +44,7 @@ public class HibernateConfiguration {
 		dataSource.setPassword("password");
 		return dataSource;
 	}
+
 	private Properties getHibernateProperties() {
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
@@ -49,6 +53,7 @@ public class HibernateConfiguration {
 		hibernateProperties.put("hibernate.hbm2ddl.auto", "update");
 		return hibernateProperties;
 	}
+
 	@Bean
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager();

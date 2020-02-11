@@ -4,16 +4,19 @@ import java.util.List;
 
 import com.cts.training.model.StockExchange;
 
-
 public interface StockExchangeDAO {
-	public boolean saveExchange(StockExchange stock);
+	
+		public boolean saveExchange(StockExchange exchange);
 
-	public boolean updateExchange(StockExchange stock);
+		public boolean updateExchange(StockExchange exchange);
 
-	public boolean daleteExchange(StockExchange stock);
+		public boolean daleteExchange(StockExchange exchange);
 
-	public StockExchange getExchangeById(int id);
+		public StockExchange getExchangeById(int id);
 
-	public List<StockExchange> getAllExchanges();
+		public List<StockExchange> getAllExchanges();
 
-}
+	}
+
+
+
