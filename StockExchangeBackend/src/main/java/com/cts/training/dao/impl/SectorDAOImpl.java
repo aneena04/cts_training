@@ -8,20 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cts.training.dao.StockExchangeDAO;
-import com.cts.training.model.StockExchangeEntity;
+import com.cts.training.dao.SectorDAO;
+import com.cts.training.model.SectorEntity;
 
 @Transactional
-@Repository(value = "stockExchangeDAO")
-public class StockExchangeDAOImpl implements StockExchangeDAO {
+@Repository(value = "sectorDAO")
+public class SectorDAOImpl implements SectorDAO {
 
 	@Autowired
 	SessionFactory sessionFactory;
-	
 	@Override
-	public boolean addStockExchange(StockExchangeEntity stockExchange) {
+	public boolean addSector(SectorEntity sector) {
 		try {
-			sessionFactory.getCurrentSession().save(stockExchange);
+			sessionFactory.getCurrentSession().save(sector);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -30,9 +29,9 @@ public class StockExchangeDAOImpl implements StockExchangeDAO {
 	}
 
 	@Override
-	public boolean updateStockExchange(StockExchangeEntity stockExchange) {
+	public boolean updateSector(SectorEntity sector) {
 		try {
-			sessionFactory.getCurrentSession().update(stockExchange);
+			sessionFactory.getCurrentSession().update(sector);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -41,9 +40,9 @@ public class StockExchangeDAOImpl implements StockExchangeDAO {
 	}
 
 	@Override
-	public boolean deleteStockExchange(StockExchangeEntity stockExchange) {
+	public boolean deleteSector(SectorEntity sector) {
 		try {
-			sessionFactory.getCurrentSession().delete(stockExchange);
+			sessionFactory.getCurrentSession().delete(sector);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -52,9 +51,9 @@ public class StockExchangeDAOImpl implements StockExchangeDAO {
 	}
 
 	@Override
-	public StockExchangeEntity getStockExchangeById(int id) {
+	public SectorEntity getSectorById(int id) {
 		try {
-			return sessionFactory.getCurrentSession().get(StockExchangeEntity.class, id);
+			return sessionFactory.getCurrentSession().get(SectorEntity.class, id);
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return null;
@@ -63,9 +62,9 @@ public class StockExchangeDAOImpl implements StockExchangeDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<StockExchangeEntity> getAllStockExchanges() {
+	public List<SectorEntity> getAllSectors() {
 		try {
-			return sessionFactory.getCurrentSession().createQuery("FROM StockExchangeEntity").getResultList();
+			return sessionFactory.getCurrentSession().createQuery("FROM SectorEntity").getResultList();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return null;

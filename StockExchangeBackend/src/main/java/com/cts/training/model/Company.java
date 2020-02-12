@@ -10,22 +10,22 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Component
-@Table(name = "company")
+@Table(name="company")
 public class Company implements Serializable {
 
 	private static final long serialVersionUID = -6721988738619310856L;
-
 	@Id
 	private int id;
 	private String name;
 	private String sector;
 	private String ceoName;
 	private double turnOver;
-
+	
 	public Company() {
+		
 	}
 
-	public Company(int id, String name, String sector, String ceoName, double turnOver) {
+	public Company(int id,String name, String sector, String ceoName, double turnOver) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -79,5 +79,8 @@ public class Company implements Serializable {
 		return "Company [id=" + id + ", name=" + name + ", sector=" + sector + ", ceoName=" + ceoName + ", turnOver="
 				+ turnOver + "]";
 	}
+	
+	
+	
 
 }
