@@ -21,9 +21,9 @@ public class RegisterDAOImpl implements RegisterDAO {
 	SessionFactory sessionFactory;
 
 	@Override
-	public boolean saveUser(Register register) {
+	public boolean saveOrUpdateUser(Register register) {
 		try {
-			sessionFactory.getCurrentSession().save(register);
+			sessionFactory.getCurrentSession().saveOrUpdate(register);
 			return true;
 		} 
 		catch (HibernateException e) {

@@ -68,14 +68,14 @@ public class SectorEntityTest {
 	@Ignore
 	public void testAddSectorSuccess() {
 		SectorEntity sector = new SectorEntity(101, "jhgfdfgh", "bnm");
-		assertEquals(true, sectorDAO.addSector(sector));
+		assertEquals(true, sectorDAO.saveOrUpdateSector(sector));
 	}
 
 	@Test(expected = DataIntegrityViolationException.class)
 	@Ignore
 	public void testAddSectorFail() {
 		SectorEntity sector = new SectorEntity(101, "jhgfdfgh", "bnm");
-		assertEquals(true, sectorDAO.addSector(sector));
+		assertEquals(true, sectorDAO.saveOrUpdateSector(sector));
 	}
 
 	@Test

@@ -14,81 +14,104 @@ import com.cts.training.dao.IPODAO;
 import com.cts.training.dao.RegisterDAO;
 import com.cts.training.dao.SectorDAO;
 import com.cts.training.dao.StockExchangeDAO;
+import com.cts.training.dao.StockPriceDAO;
 import com.cts.training.model.Company;
 import com.cts.training.model.IPOEntity;
 import com.cts.training.model.Register;
 import com.cts.training.model.SectorEntity;
 import com.cts.training.model.StockExchangeEntity;
+import com.cts.training.model.StockPriceEntity;
 
 @Controller
 public class HomeController {
-	
+	@Autowired
+	private IPODAO ipoDAO;
 	@Autowired
 	private RegisterDAO registerDAO;
+	@Autowired
+	private CompanyDAO companyDAO;
+	@Autowired
+	private SectorDAO sectorDAO;
+	@Autowired
+	private StockExchangeDAO stockExchangeDAO;
+	@Autowired
+	private StockPriceDAO stockPriceDAO;
 	
 	
 	
-	
-//	@GetMapping("/") --- In spring 4.3 version and above
-	@RequestMapping("/index")
+	//@GetMapping("/") --- In spring 4.3 version and above
+	@RequestMapping("/")
 	public String indexPage(Model model) 
 	{
-		model.addAttribute("message", "Welcome to Spring MVC");
+		//model.addAttribute("message", "Welcome to Spring MVC");
 	//	List<String> names=new ArrayList<String>();
-		List<Register> users= registerDAO.getAllUsers();
-		model.addAttribute("list", users);
 		
-		//addNames(names);
+		
+	//addNames(names);
 	//	model.addAttribute("list", names);
 		return "index";
 	}
-
-////	private void addNames(List<String> names) {
-////		names.add("Divya");
-////		names.add("Hameemsha");
-////		names.add("Sindhu");
-////		names.add("Aneena");
-////		
-//		
-////	}
 	
-	@Autowired
-	private CompanyDAO companyDAO;
+	@RequestMapping("/ipo")
+	public String ipoPage(Model model) 
+	{
 	
-	@RequestMapping("/companies")
-	public String companyPage(Model model) {
-		List<Company> company=companyDAO.getAllCompanies();
-		model.addAttribute("list", company);
+		
+		
+		return "ipo";
+	}
+	
+	
+	@RequestMapping("/company")
+	public String companyPage(Model model) 
+	{ 
+	
+		
+		
 		return "company";
 	}
 	
-	@Autowired
-	private IPODAO ipoDAO;
 	
-	@RequestMapping("/ipo")
-	public String ipoPage(Model model) {
-		List<IPOEntity> ipo=ipoDAO.getAllIPOs();
-		model.addAttribute("list", ipo);
-		return "ipo";
-	}
-	@Autowired
-	private SectorDAO sectorDAO;
 	
 	@RequestMapping("/sector")
-	public String sectorPage(Model model) {
+	public String sectorPage(Model model) 
+	{
+	
 		List<SectorEntity> sector=sectorDAO.getAllSectors();
-		model.addAttribute("list", sector);
+		model.addAttribute("sectorlist", sector);
+		
 		return "sector";
 	}
 	
-	@Autowired
-	private StockExchangeDAO stockExchangeDAO;
 	
-	@RequestMapping("/stock")
-	public String stockExchangePage(Model model) {
-		List<StockExchangeEntity> stock=stockExchangeDAO.getAllStockExchanges();
-		model.addAttribute("list", stock);
-		return "stock";
+	@RequestMapping("/stockExchange")
+	public String StockExchangePage(Model model) 
+	{
+	
+		List<StockExchangeEntity> stockExchanges=stockExchangeDAO.getAllStockExchanges();
+		model.addAttribute("stockExchangelist", stockExchanges);
+		
+		return "stockExchange";
+	}
+	@RequestMapping("/stockPrice")
+	public String StockPricePage(Model model) 
+	{
+	
+		List<StockPriceEntity> stockPrices=stockPriceDAO.getAllStockPrices();
+		model.addAttribute("stockpricelist", stockPrices);
+		
+		return "stockExchange";
 	}
 	
+
+
+//	private void addNames(List<String> names) {
+//		names.add("Divya");
+//		names.add("Hameemsha");
+//		names.add("Sindhu");
+//		names.add("Aneena");
+//		
+		
+//	}
+
 }

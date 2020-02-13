@@ -68,14 +68,14 @@ public class IPOEntityTest {
 	@Ignore
 	public void testAddIPOSuccess() {
 		IPOEntity ipo = new IPOEntity(1, "fvbn", "cvbnm", 456789L, 56789L, LocalDateTime.now(), "cvbnm");
-		assertEquals(true, ipoDAO.addIPO(ipo));
+		assertEquals(true, ipoDAO.saveOrUpdateIPO(ipo));
 	}
 
 	@Test(expected = DataIntegrityViolationException.class)
 	@Ignore
 	public void testAddIPOFail() {
 		IPOEntity ipo = new IPOEntity(1, "fvbn", "cvbnm", 456789L, 56789L, LocalDateTime.now(), "cvbnm");
-		assertEquals(true, ipoDAO.addIPO(ipo));
+		assertEquals(true, ipoDAO.saveOrUpdateIPO(ipo));
 	}
 
 	@Test

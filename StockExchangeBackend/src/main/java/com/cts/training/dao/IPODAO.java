@@ -6,7 +6,7 @@ import com.cts.training.model.IPOEntity;
 
 public interface IPODAO {
 
-	public boolean addIPO(IPOEntity ipo);
+	public boolean saveOrUpdateIPO(IPOEntity ipo);
 
 	public boolean updateIPO(IPOEntity ipo);
 

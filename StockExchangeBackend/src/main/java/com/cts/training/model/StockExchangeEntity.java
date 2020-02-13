@@ -46,10 +46,10 @@ public class StockExchangeEntity implements Serializable {
 	public void setExchangeName(String exchangeName) {
 		this.exchangeName = exchangeName;
 	}
-	public String getContractAddress() {
+	public String getContactAddress() {
 		return contactAddress;
 	}
-	public void setContractAddress(String contractAddress) {
+	public void setContactAddress(String contractAddress) {
 		this.contactAddress = contractAddress;
 	}
 	public String getBrief() {
@@ -68,11 +68,5 @@ public class StockExchangeEntity implements Serializable {
 	public String toString() {
 		return "StockExchange [id=" + id + ", exchangeName=" + exchangeName + ", contractAddress=" + contactAddress
 				+ ", brief=" + brief + ", remarks=" + remarks + "]";
-	}
-	public Object getContactAddress() {
-		// TODO Auto-generated method stub
-		return null;
 	}	
-	
-	
 }

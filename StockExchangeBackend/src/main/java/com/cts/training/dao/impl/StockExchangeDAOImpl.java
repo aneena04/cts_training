@@ -19,9 +19,9 @@ public class StockExchangeDAOImpl implements StockExchangeDAO {
 	SessionFactory sessionFactory;
 	
 	@Override
-	public boolean addStockExchange(StockExchangeEntity stockExchange) {
+	public boolean saveOrUpdateStockExchange(StockExchangeEntity stockExchange) {
 		try {
-			sessionFactory.getCurrentSession().save(stockExchange);
+			sessionFactory.getCurrentSession().saveOrUpdate(stockExchange);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();

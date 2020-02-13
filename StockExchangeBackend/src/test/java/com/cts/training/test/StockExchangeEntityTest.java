@@ -67,14 +67,14 @@ public class StockExchangeEntityTest {
 	@Ignore
 	public void testAddStockExchangeSuccess() {
 		StockExchangeEntity stockExchange = new StockExchangeEntity(101, "BSE", "Mumbai", "ghjk", "vbnm");
-		assertEquals(true, stockExchangeDAO.addStockExchange(stockExchange));
+		assertEquals(true, stockExchangeDAO.saveOrUpdateStockExchange(stockExchange));
 	}
 
 	@Test(expected = DataIntegrityViolationException.class)
 	@Ignore
 	public void testAddStockExchangeFail() {
 		StockExchangeEntity stockExchange = new StockExchangeEntity(101, "BSE", "Mumbai", "ghjk", "vbnm");
-		assertEquals(true, stockExchangeDAO.addStockExchange(stockExchange));
+		assertEquals(true, stockExchangeDAO.saveOrUpdateStockExchange(stockExchange));
 	}
 
 	@Test

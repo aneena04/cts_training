@@ -24,9 +24,9 @@ public class CompanyDAOImpl implements CompanyDAO {
 		SessionFactory sessionFactory;
 
 		@Override
-		public boolean saveCompany(Company company) {
+		public boolean saveOrUpdateCompany(Company company) {
 			try {
-				sessionFactory.getCurrentSession().save(company);
+				sessionFactory.getCurrentSession().saveOrUpdate(company);
 				return true;
 			} catch (HibernateException e) {
 				e.printStackTrace();

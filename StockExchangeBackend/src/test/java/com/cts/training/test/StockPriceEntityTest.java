@@ -71,14 +71,14 @@ public class StockPriceEntityTest {
 //	@Ignore
 	public void testAddStockPriceSuccess() {
 		StockPriceEntity stockPrice = new StockPriceEntity("sdfgh", "sdfg", 34567L, LocalDate.now(), LocalTime.now());
-		assertEquals(true, stockPriceDAO.addStockPrice(stockPrice));
+		assertEquals(true, stockPriceDAO.saveOrUpdateStockPrice(stockPrice));
 	}
 
 	@Test(expected = DataIntegrityViolationException.class)
 	@Ignore
 	public void testAddStockPriceFail() {
 		StockPriceEntity stockPrice = new StockPriceEntity("sdfgh", "sdfg", 34567L, LocalDate.now(), LocalTime.now());
-		assertEquals(true, stockPriceDAO.addStockPrice(stockPrice));
+		assertEquals(true, stockPriceDAO.saveOrUpdateStockPrice(stockPrice));
 	}
 
 	@Test

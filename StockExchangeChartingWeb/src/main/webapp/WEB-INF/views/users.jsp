@@ -13,7 +13,7 @@
 <body>
 <c:url var="userUrl" value="/user/save"></c:url>
 <form:form action="${userUrl}" modelAttribute="user">
-	<table>
+	<table class="table">
 	<c:if test="${!empty user.username }">
 	<tr>
 	<td><form:label path="id">Id</form:label></td>
@@ -41,6 +41,7 @@
 			<td><form:label path="username">Username</form:label></td>
 			<td><form:input path="username"/></td>
 		</tr>
+
 		<tr>
 			<td></td>
 			<td>
@@ -50,14 +51,17 @@
 			<c:if test="${!empty user.username}">
 			<input type="Submit" value="Update"/>
 			</c:if>
+			
 			</td>
 		</tr>
+		
 	</table>
+	
 	<br/>
 	<br/>
 	<div>
 	<h2> USER DETAILS</h2>
-		<table border="1">
+		<table  class="table" border="1">
  <tr>
 <th>Id</th>
 <th>Email</th>
@@ -67,7 +71,7 @@
 <th>User Name</th>
 <th>Actions</th>
 </tr>
-<c:forEach var="register" items="${list}">
+<c:forEach var="register" items="${list}"> 
 <tr>
 <td>${register.id }</th>
 <td>${register.email }</td>
@@ -75,12 +79,13 @@
 <td>${register.password }</td>
 <td>${register.phone }</td>
 <td>${register.username }</td>
-<td><a href= "<c:url value='/remove/${register.id }'/> ">Remove</a>   |
+<td><a href= "<c:url value='/remove/${register.id }'/> ">Remove</a>   |   
     <a href= "<c:url value='/update/${register.id }'/> ">Update</a>
 </td>
 </tr>
 </c:forEach>
 </table>
+	
 	</div>
 </form:form>
 </body>

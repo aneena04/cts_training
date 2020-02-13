@@ -18,9 +18,9 @@ public class IPODAOImpl implements IPODAO {
 	@Autowired
 	SessionFactory sessionFactory;
 	@Override
-	public boolean addIPO(IPOEntity ipo) {
+	public boolean saveOrUpdateIPO(IPOEntity ipo) {
 		try {
-			sessionFactory.getCurrentSession().save(ipo);
+			sessionFactory.getCurrentSession().saveOrUpdate(ipo);
 			return true;
 		} 
 		catch (HibernateException e) {

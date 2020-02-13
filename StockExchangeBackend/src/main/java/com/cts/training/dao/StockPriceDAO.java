@@ -6,7 +6,7 @@ import com.cts.training.model.StockPriceEntity;
 
 public interface StockPriceDAO {
 
-	public boolean addStockPrice(StockPriceEntity stockPrice);
+	public boolean saveOrUpdateStockPrice(StockPriceEntity stockPrice);
 
 	public boolean updateStockPrice(StockPriceEntity stockPrice);
 

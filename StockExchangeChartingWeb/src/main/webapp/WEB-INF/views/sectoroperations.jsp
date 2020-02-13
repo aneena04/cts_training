@@ -1,67 +1,79 @@
+<%@include file="header.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ page isELIgnored="false"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="ISO-8859-1"%>
+    <%@ page isELIgnored="false"  %>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-	crossorigin="anonymous">
 </head>
 <body>
-	<%@include file="header.jsp"%>
-	<hr>
-	<c:url var="sectorUrl" value="/sector/save"></c:url>
-	<form:form action="${sectorUrl }" modelAttribute="sector">
-		<table>
-			<tr>
-				<div class="form-group">
-					<td><form:label path="name">name</form:label></td>
-					<td><form:input class="form-control" path="name"></form:input></td>
-				</div>
-			</tr>
-			<tr>
-				<div class="form-group">
-					<td><form:label path="brief">brief</form:label></td>
-					<td><form:input class="form-control" path="brief"></form:input></td>
-				</div>
-			</tr>
-
-
-			<tr>
-				<td><button type="submit">submit</button></td>
-
-
-			</tr>
-		</table>
-	</form:form>
-
-	<br />
-	<br />
-	<table border="1">
+<c:url var="sectorUrl" value="/sector/save"></c:url>
+<form:form action="${sectorUrl}" modelAttribute="sector">
+	<table class="table">
+	
+		<c:if test="${!empty sector.name }">
+	<tr>
+	<td><form:label path="id">Id</form:label></td>
+			<td><form:input path="id" readonly="true" disabled="true"/>
+			<form:hidden path="id"/></td>
+	</tr>
+	</c:if>
 		<tr>
-			<th>Id</th>
-			<th>name</th>
-			<th>brief</th>
-			<th>Actions</th>
-
+			<td><form:label path="brief">Brief</form:label></td>
+			<td><form:input path="brief"/></td>
 		</tr>
-		<c:forEach var="sector" items="${list}">
-			<tr>
-				<td>${sector.id }</th>
-				<td>${sector.name }</td>
-				<td>${sector.brief }</td>
-				<td><a href="<c:url value='/sector/remove/${sector.id }'/>">Delete</a></td>
-
-
-			</tr>
-		</c:forEach>
+		<tr>
+			<td><form:label path="name">Name</form:label></td>
+			<td><form:input path="name"/></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+			<c:if test="${empty sector.name}">
+			<input type="Submit" value="Register"/>
+			</c:if>
+			<c:if test="${!empty sector.name}">
+			<input type="Submit" value="Update"/>
+			</c:if>
+			
+			</td>
+		</tr>
+		
 	</table>
+</form:form>
 
+<br>
+<hr>
+
+<div>
+<h2>SECTOR DETAILS</h2>
+<hr>
+
+ <table class="table" border="1">
+ <tr>
+<th>Id</th>
+<th>Brief</th>
+<th>Name</th>
+<th>Actions</th>
+
+</tr>
+<c:forEach var="sector" items="${sectorlist}"> 
+<tr>
+<td>${sector.id }</td>
+<td>${sector.brief}</td>
+<td>${sector.name }</td>
+<td><a href= "<c:url value='/removesector/${sector.id }'/> ">Remove</a> |
+	<a href= "<c:url value='/updatesector/${sector.id }'/> ">Update</a>
+</td>
+
+</tr>
+</c:forEach>
+</table>
+
+</div>
 </body>
 </html>

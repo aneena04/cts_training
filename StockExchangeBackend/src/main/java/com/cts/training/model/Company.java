@@ -3,6 +3,7 @@ package com.cts.training.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,6 +16,7 @@ public class Company implements Serializable {
 
 	private static final long serialVersionUID = -6721988738619310856L;
 	@Id
+	@GeneratedValue
 	private int id;
 	private String name;
 	private String sector;

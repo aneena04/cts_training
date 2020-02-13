@@ -6,7 +6,7 @@ import com.cts.training.model.StockExchangeEntity;
 
 public interface StockExchangeDAO {
 
-	public boolean addStockExchange(StockExchangeEntity stockExchange);
+	public boolean saveOrUpdateStockExchange(StockExchangeEntity stockExchange);
 
 	public boolean updateStockExchange(StockExchangeEntity stockExchange);
 

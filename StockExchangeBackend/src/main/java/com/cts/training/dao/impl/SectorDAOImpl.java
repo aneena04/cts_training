@@ -18,9 +18,9 @@ public class SectorDAOImpl implements SectorDAO {
 	@Autowired
 	SessionFactory sessionFactory;
 	@Override
-	public boolean addSector(SectorEntity sector) {
+	public boolean saveOrUpdateSector(SectorEntity sector) {
 		try {
-			sessionFactory.getCurrentSession().save(sector);
+			sessionFactory.getCurrentSession().saveOrUpdate(sector);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
