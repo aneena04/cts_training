@@ -82,7 +82,63 @@
 ##Day 21
 		Java Examples
 
+##Day 22	KBA Practice (Core Java)
+
+##Day 23	Angular
+		Services
+
+##Day 24	Angular
+		Services
+		Observable
+		Routing
+		Hooks
+
+##Day 25	Angular
+		Pipes
+		Testing using Karma and Jasmine
+
+##Day 26	Hibernate
+		XML Mapping
+		JPA Mapping
+
+##Day 27	Case study)
+
+##Day 28	Hibernate
+		Collections Mapping
+		Inheritance Mapping
+		Hibernate Mapping
+
+##Day 29	Servlet
+		Interfaces and Classes
+		doPost and doGet
+
+##Day 30	JSP
+		Lifecycle
+		Elements
+		Expression Language
+		JSTL Core library
+
+##Day 31	Spring
+		Introduction
+		Problems overcome by Spring
+		Features
+		Architecture
+		Containers
+
+##Day 32	Spring
+
+##Day 33	Codesprint Hackathon
+
+##Day 34	Maven
+		Spring and Hibernate Integration
+
+##Day 35	Sprig MVC
+
+##Day 36	Sprig MVC
+
 ##Day 37  	Spring MVC CRUD operations
 		Spring JDBC Template
 
-		
+##Day 38 	JSP Security	
+		Spring Security
+		JSP Filter
