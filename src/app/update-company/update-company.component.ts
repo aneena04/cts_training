@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { CompanyService } from '../company.service';
+import { CompanyService } from '../services/company.service';
 import { Router } from '@angular/router';
 
 
@@ -35,7 +35,7 @@ export class UpdateCompanyComponent implements OnInit {
 }
 updateTheCompany(){
 this.companyService.updateCompany(this.updateCompany.value).subscribe(u=>{
-  this.router.navigate(['companies'])
+  this.router.navigate(['/get-company'])
 });
 }
 }

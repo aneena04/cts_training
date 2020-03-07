@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ExchangeService } from 'src/app/exchange.service';
+import { ExchangeService } from 'src/app/services/exchange.service';
 import { Exchange } from 'src/app/model/exchange';
 
 

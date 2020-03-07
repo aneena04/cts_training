@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StockPriceService } from 'src/app/stock-price.service';
+import { StockPriceService } from 'src/app/services/stock-price.service';
 
 @Component({
   selector: 'app-update-stock-price',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Exchange } from 'src/app/model/exchange';
-import { ExchangeService } from 'src/app/exchange.service';
+import { ExchangeService } from 'src/app/services/exchange.service';
 import { Router } from '@angular/router';
 
 

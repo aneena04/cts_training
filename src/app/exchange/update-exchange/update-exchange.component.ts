@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ExchangeService } from 'src/app/exchange.service';
+import { ExchangeService } from 'src/app/services/exchange.service';
 
 @Component({
   selector: 'app-update-exchange',

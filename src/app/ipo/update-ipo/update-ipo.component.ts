@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IpoService } from 'src/app/ipo.service';
+import { IpoService } from 'src/app/services/ipo.service';
 @Component({
   selector: 'app-update-ipo',
   templateUrl: './update-ipo.component.html',

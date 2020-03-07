@@ -7,7 +7,6 @@ import { AddUserComponent } from './user/add-user/add-user.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { GetUserComponent } from './user/get-user/get-user.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
-import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { UpdateExcelComponent } from './update-excel/update-excel.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
@@ -25,6 +24,7 @@ import { UpdateStockPriceComponent } from './stock-price/update-stock-price/upda
 import { ActivateUserComponent } from './activate-user/activate-user.component';
 import { CompareSectorComponent } from './compare-sector/compare-sector.component';
 import { CompareCompanyComponent } from './compare-company/compare-company.component';
+import { ChartsComponent } from './charts/charts.component';
 
 
 const routes: Routes = [
@@ -35,9 +35,8 @@ const routes: Routes = [
   {path:'admin-landing-page',component:AdminLandingPageComponent},
   {path:'get-user',component:GetUserComponent},
   {path:'update-user',component:UpdateUserComponent},
-  {path:'admin-login',component:AdminLoginComponent},
-  {path:'update-exel',component:UpdateExcelComponent},
-  {path:'companies',component:CompaniesComponent},
+  {path:'import-exel',component:UpdateExcelComponent},
+  {path:'get-company',component:CompaniesComponent},
   {path:'add-company',component:AddCompanyComponent},
    {path:'add-exchange',component:AddExchangeComponent},
    {path:'get-exchange',component:GetExchangeComponent},
@@ -48,11 +47,13 @@ const routes: Routes = [
    {path:'update-company',component:UpdateCompanyComponent},
    {path:'update-exchange',component:UpdateExchangeComponent},
    {path:'add-stock-price',component:AddStockPriceComponent},
-   {path:'list-stock-price',component:ListStockPriceComponent},
+   {path:'get-stock-price',component:ListStockPriceComponent},
    {path:'update-stock-price',component:UpdateStockPriceComponent},
    {path:'activate-user',component:ActivateUserComponent},
    {path:'compare-sector',component:CompareSectorComponent},
-   {path:'compare-company',component:CompareCompanyComponent}
+   {path:'compare-company',component:CompareCompanyComponent},
+   {path:'charts',component:ChartsComponent}
+
 
 
 

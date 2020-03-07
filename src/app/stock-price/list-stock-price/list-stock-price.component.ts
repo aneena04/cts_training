@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StockPriceService } from 'src/app/stock-price.service';
+import { StockPriceService } from 'src/app/services/stock-price.service';
 import { StockPrice } from 'src/app/model/stockprice';
 
 @Component({
@@ -18,11 +18,11 @@ export class ListStockPriceComponent implements OnInit {
     this.stockPrices=d;
     });
   }
-  deleteStockPrice(stockPrice:StockPrice)
-  {
-    this.stockService.deleteStockPrice(stockPrice.id).subscribe();
-    this.stockPrices=this.stockPrices.filter(c=>c!==stockPrice);
-  }
+  // deleteStockPrice(stockPrice:StockPrice)
+  // {
+  //   this.stockService.deleteStockPrice(stockPrice.id).subscribe();
+  //   this.stockPrices=this.stockPrices.filter(c=>c!==stockPrice);
+  // }
   updateStockPrice(stockPrice:StockPrice)
   {
     localStorage.removeItem('stockId');
